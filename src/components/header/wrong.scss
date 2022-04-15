@@ -1,0 +1,89 @@
+@import "../../styles/variables.scss";
+
+.header {
+  width: 100%;
+  height: $header-height;
+  padding: 0 3rem;
+  transition: all ease-in-out 0.3s;
+  @include breakpoint(md) {
+    padding: $normal-padding;
+  }
+
+  &__content {
+    max-width: 1920px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    &.menu {
+      transform: translate(100%);
+    }
+
+    &__logo {
+      color: $primary-logo-color;
+      font-weight: $logo-weight;
+      font-size: 2rem;
+    }
+
+    &__nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      backdrop-filter: blur(5px);
+      transform: translate(0);
+      transition: all ease-in-out 0.3s;
+      position: relative;
+
+      @include breakpoint(md) {
+        // max-width: 450px;
+        transform: none;
+        flex-direction: row;
+        background: transparent;
+        width: auto;
+        height: 100%;
+        position: static;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        transition: all 0.5s ease;
+        @include breakpoint(md) {
+          flex-direction: row;
+          position: static;
+        }
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 10rem;
+          a {
+            margin-right: 0;
+            color: white;
+            cursor: pointer;
+          }
+          @include breakpoint(md) {
+            margin: 0 3.625rem;
+            margin-bottom: 0 !important;
+          }
+        }
+      }
+    }
+
+    &__toggle {
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      @include breakpoint(md) {
+        display: none;
+      }
+    }
+  }
+}
