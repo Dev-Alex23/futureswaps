@@ -2,7 +2,7 @@
 
 .header {
   width: 100%;
-  padding: 0.7rem 8rem;
+  padding: 0.7rem 12rem;
   transition: all ease-in-out 0.3s;
 
   @include breakpoint(md) {
@@ -18,7 +18,7 @@
       h2 {
         color: $primary-logo-color;
         font-weight: $logo-weight;
-        font-size: 2rem;
+        font-size: clamp(1.5rem, 8vw, 2rem);
       }
     }
 
@@ -41,6 +41,7 @@
           top: 50px;
           right: 0%;
           z-index: 33;
+          backdrop-filter: blur(7px);
           transition: all ease-in-out 0.3s;
         }
         li {
