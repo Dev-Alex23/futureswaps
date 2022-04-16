@@ -1,6 +1,100 @@
 @import "../../styles/variables.scss";
 
-div {
+.hero {
+  width: 100%;
+  margin-top: 83px;
+  padding: 0.7rem 12rem;
   color: white;
-  text-align: center;
+  transition: padding ease-in-out 0.3s;
+  @include breakpoint(md) {
+    padding: 0.7rem 3rem;
+  }
+
+  &__content {
+    &__info-container {
+      max-width: 750px;
+      p {
+        color: $primary-text-color;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 30px;
+      }
+
+      &__heading {
+        max-width: 860px;
+        h1 {
+          font-size: clamp(1.5rem, 8vw, 5rem);
+          font-weight: 400;
+        }
+      }
+
+      &__sub-heading {
+        margin-top: 2rem;
+        p {
+          max-width: 500px;
+          color: $secondary-text-color;
+        }
+      }
+    }
+    &__cta {
+      margin-top: 1.5rem;
+      #fill {
+        cursor: pointer;
+        background-color: $primary-text-color;
+        padding: 11px 33px;
+        border-radius: 25px;
+        border: none;
+        margin-right: 2.1rem;
+      }
+      #outline {
+        cursor: pointer;
+        background-color: transparent;
+        color: white;
+        padding: 11px 33px;
+        border-radius: 25px;
+        border: 1px solid $primary-text-color;
+
+        @include breakpoint(md) {
+          margin-top: 1.3rem;
+        }
+      }
+    }
+    &__trade {
+      margin-top: 7rem;
+      display: flex;
+      flex-wrap: wrap;
+      &__alltime {
+        margin-right: 2rem;
+        border-top: 2px solid #4d6adc;
+        // border-radius: 20px 20px 0 0;
+        // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        width: 300px;
+        height: 170px;
+        p {
+          // color: white;
+          color: #5350af;
+          font-size: 1rem;
+          margin-top: 1rem;
+          text-align: center;
+          &:nth-child(2) {
+            color: white;
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.wave-container {
+  z-index: -1;
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 15%;
+
+  img {
+    position: fixed;
+    width: 1650px;
+  }
 }
