@@ -1,0 +1,79 @@
+@import "../../styles/variables.scss";
+
+.controll {
+  margin-top: 5rem;
+  &__content {
+    &__heading {
+      h1 {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        font-size: clamp(2rem, 8vw, 4rem);
+        font-weight: 400;
+      }
+
+      .sub-heading {
+        max-width: 550px;
+        margin: 2rem auto;
+        p {
+          font-size: 1rem;
+          color: $secondary-text-color;
+        }
+      }
+
+      @include breakpoint(md) {
+        padding: 0.7rem 3rem;
+      }
+    }
+
+    &__wrapper {
+      padding: 0.7rem 12rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      transition: padding ease-in-out 0.3s;
+
+      @include breakpoint(md) {
+        padding: 0.7rem 3rem;
+      }
+
+      .container {
+        width: 370px;
+        background: rgba(19, 19, 39, 0.45);
+        margin-top: 7.5rem;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include breakpoint(md) {
+          margin-top: 5rem;
+        }
+
+        &__image {
+          width: 110px;
+          margin: 0 auto;
+          // background: radial-gradient(
+          //   50% 50% at 50% 50%,
+          //   #5350af 0%,
+          //   rgba(161, 160, 190, 0.88) 0.01%,
+          //   rgba(196, 196, 196, 0) 100%
+          // );
+          img {
+            width: 100%;
+            // display: block;
+            position: relative;
+            top: -31px;
+          }
+        }
+
+        &__text {
+          position: relative;
+          bottom: 34px;
+          color: white;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 27px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
