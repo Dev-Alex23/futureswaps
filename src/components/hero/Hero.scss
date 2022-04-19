@@ -78,23 +78,23 @@
           text-align: center;
           &:nth-child(2) {
             color: white;
-            font-size: 2rem;
+            font-size: clamp(1.4rem, 8vw, 2rem);
           }
         }
       }
     }
   }
-}
+  .wave-container {
+    display: none;
+    background-color: #4d6adc;
+    position: relative;
+    .blue-container,
+    .teal-container,
+    .purple-container {
+      position: absolute;
+    }
 
-.wave-container {
-  z-index: -1;
-  position: absolute;
-  display: flex;
-  top: 0;
-  left: 15%;
-
-  img {
-    position: fixed;
-    width: 1650px;
+    // img {
+    // }
   }
 }
