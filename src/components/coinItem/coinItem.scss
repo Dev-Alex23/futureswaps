@@ -1,0 +1,59 @@
+@import "../../styles/variables.scss";
+
+.form {
+  width: 500px;
+  margin: 5rem auto;
+  h1 {
+    color: white;
+    font-weight: 400;
+    font-size: clamp(1rem, 8vw, 4rem);
+  }
+
+  input {
+    width: 100%;
+    height: 40px;
+    border: none;
+    padding-left: 10px;
+  }
+}
+
+.coin-row {
+  max-width: 1140px;
+  margin: 0 auto;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.04);
+    transition: transform ease-in-out 0.3s;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    color: aliceblue;
+    box-shadow: $box-shadow;
+    // border: 2px dotted green;
+    border-radius: 5px;
+    background-color: $primary-bg-color;
+    margin: 2rem 1rem;
+    padding: 0.7rem 1rem;
+
+    .name {
+      text-transform: uppercase;
+    }
+
+    .red {
+      color: red;
+    }
+    .green {
+      color: green;
+    }
+
+    .img {
+      img {
+        width: 25px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
