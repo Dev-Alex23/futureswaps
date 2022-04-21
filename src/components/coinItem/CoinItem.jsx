@@ -21,9 +21,16 @@ const CoinItem = ({
         <div className='price'>
           <p>${current_price.toLocaleString()}</p>
         </div>
-        <div className='24hr'>
-          <p>{price_change_24h.toFixed(2)}%</p>
-        </div>
+        {price_change_24h < 0 ? (
+          <div className='24hr red'>
+            <p>{price_change_24h.toFixed(2)}%</p>
+          </div>
+        ) : (
+          <div className='24hr green'>
+            <p>{price_change_24h.toFixed(2)}%</p>
+          </div>
+        )}
+
         <div className='volume'>
           <p>{total_volume.toLocaleString()}</p>
         </div>
