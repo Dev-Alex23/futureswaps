@@ -1,0 +1,9 @@
+@import "../../styles/variables.scss";
+
+.left {
+  flex-direction: row-reverse;
+
+  &__info-container {
+    width: 100%;
+  }
+}

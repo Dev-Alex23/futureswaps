@@ -1,0 +1,71 @@
+@import "../../styles/variables.scss";
+
+.image-info-container {
+  padding: 0rem 12rem;
+  margin: 13rem 0;
+  display: flex;
+  gap: 6rem;
+  // display: grid;
+  // gap: 6rem;
+  // grid-template-columns: 1fr 1fr;
+  transition: all ease-in-out 0.3s;
+
+  @include breakpoint(md) {
+    padding: 0.7rem 3rem;
+    margin: 8rem 0;
+    flex-wrap: wrap-reverse;
+    gap: 2rem;
+
+    // grid-template-rows: 1fr 1fr;
+    // grid-template-columns: 1fr;
+  }
+
+  &__image-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint(md) {
+      // min-width: 410px;
+    }
+    img {
+      min-width: 400px;
+      width: 100%;
+    }
+  }
+
+  &__info-container {
+    .heading {
+      h1 {
+        color: rgb(255, 255, 255);
+        font-size: clamp(1rem, 3.5vw, 4rem);
+        font-weight: 400;
+
+        @include breakpoint(md) {
+          font-size: 40px;
+        }
+      }
+    }
+    .sub-text {
+      max-width: 550px;
+      p {
+        color: $secondary-text-color;
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  &__btn-CTA {
+    margin-top: 2rem;
+    #fill {
+      cursor: pointer;
+      background-color: #8cdfb8;
+      padding: 11px 33px;
+      border-radius: 25px;
+      border: none;
+      margin-right: 2.1rem;
+    }
+  }
+}
