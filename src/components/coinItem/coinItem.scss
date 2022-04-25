@@ -1,22 +1,5 @@
 @import "../../styles/variables.scss";
 
-.form {
-  width: 500px;
-  margin: 5rem auto;
-  h1 {
-    color: white;
-    font-weight: 400;
-    font-size: clamp(1rem, 8vw, 4rem);
-  }
-
-  input {
-    width: 100%;
-    height: 40px;
-    border: none;
-    padding-left: 10px;
-  }
-}
-
 .coin-row {
   max-width: 1140px;
   margin: 0 auto;
@@ -38,15 +21,27 @@
     margin: 2rem 1rem;
     padding: 0.7rem 1rem;
 
+    @include breakpoint(md) {
+      grid-template-columns: repeat(4, 1fr);
+
+      .volume,
+      .market-cap {
+        display: none;
+      }
+    }
+
     .name {
       text-transform: uppercase;
+      p {
+        font-size: 0.8rem;
+      }
     }
 
     .red {
       color: red;
     }
     .green {
-      color: green;
+      color: $primary-text-color;
     }
 
     .img {

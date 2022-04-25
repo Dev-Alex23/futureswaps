@@ -3,6 +3,7 @@ import axios from "axios";
 
 import "./coin.scss";
 import CoinItem from "../coinItem/CoinItem";
+import Header from "../header/Header";
 
 const Coin = () => {
   const [coins, setCoins] = useState([]);
@@ -25,16 +26,15 @@ const Coin = () => {
       .get(url)
       .then(({ data }) => {
         setCoins(data);
-        console.log(data);
       })
       .catch((error) => {
         alert(error);
-        console.log(error);
       });
   }, []);
 
   return (
     <>
+      <Header />
       <div className='form'>
         <h1>Search Crypto</h1>
         <input
@@ -70,12 +70,13 @@ const Coin = () => {
           return (
             <CoinItem
               key={coin.id}
-              id={coin.id}
-              image={coin.image}
-              current_price={coin.current_price}
-              price_change_24h={coin.price_change_24h}
-              total_volume={coin.total_volume}
-              market_cap={coin.market_cap}
+              {...coin}
+              // id={coin.id}
+              // image={coin.image}
+              // current_price={coin.current_price}
+              // price_change_24h={coin.price_change_24h}
+              // total_volume={coin.total_volume}
+              // market_cap={coin.market_cap}
             />
           );
         })}

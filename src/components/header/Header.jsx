@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
-
 import "./Header.scss";
 
 const Head = () => {
@@ -21,10 +21,16 @@ const Head = () => {
         <nav className='header__content__nav'>
           <ul className={menuOpen ? `mobileMenu` : ""}>
             <li>
-              <a href='/'>Trade</a>
+              {/* <a href='/'>Trade</a> */}
+              <Link to='/home' className='link'>
+                Home
+              </Link>
             </li>
             <li>
-              <a href='/'>Charts</a>
+              {/* <a href='/'>Charts</a> */}
+              <Link to='/charts' className='link'>
+                Charts
+              </Link>
             </li>
             <li>
               <a href='/'>About</a>

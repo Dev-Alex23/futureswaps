@@ -50,6 +50,7 @@
           @include breakpoint(md) {
             margin: 2.5rem 0;
           }
+          .link,
           a {
             color: white;
             transition: color ease-in-out 0.3s;
