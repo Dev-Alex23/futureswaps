@@ -1,12 +1,12 @@
-import Header from "./components/header/Header";
-import Hero from "./components/hero/Hero";
+import Home from "./components/home/Home";
 import "./styles/app.scss";
+
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className='App'>
-      <Header />
-      <Hero />
+      <Home />
     </div>
   );
 }
