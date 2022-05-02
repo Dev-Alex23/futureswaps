@@ -5,7 +5,7 @@ const CoinItem = ({
   id,
   image,
   current_price,
-  price_change_24h,
+  price_change_percentage_24h,
   total_volume,
   market_cap,
 }) => {
@@ -21,13 +21,13 @@ const CoinItem = ({
         <div className='price'>
           <p>${current_price.toLocaleString()}</p>
         </div>
-        {price_change_24h < 0 ? (
+        {price_change_percentage_24h < 0 ? (
           <div className='24hr red'>
-            <p>{price_change_24h.toFixed(2)}%</p>
+            <p>{price_change_percentage_24h.toFixed(2)}%</p>
           </div>
         ) : (
           <div className='24hr green'>
-            <p>{price_change_24h.toFixed(2)}%</p>
+            <p>{price_change_percentage_24h.toFixed(2)}%</p>
           </div>
         )}
 
