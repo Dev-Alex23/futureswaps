@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import "./coin.scss";
 import CoinItem from "../coinItem/CoinItem";
 import Header from "../header/Header";
+import CoinPage from "../../pages/CoinPage";
 
 const Coin = () => {
   const [coins, setCoins] = useState([]);
@@ -68,16 +70,9 @@ const Coin = () => {
 
         {filterCoins.map((coin) => {
           return (
-            <CoinItem
-              key={coin.id}
-              {...coin}
-              // id={coin.id}
-              // image={coin.image}
-              // current_price={coin.current_price}
-              // price_change_24h={coin.price_change_24h}
-              // total_volume={coin.total_volume}
-              // market_cap={coin.market_cap}
-            />
+            <Link to={`/charts/${coin.id}`} element={<CoinPage />} key={coin.id}>
+              <CoinItem key={coin.id} {...coin} />
+            </Link>
           );
         })}
 
