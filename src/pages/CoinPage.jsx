@@ -32,8 +32,8 @@ const CoinPage = () => {
           <div className='coinInfo__content__coin-info-container'>
             <div className='coin-image'>
               <img
-                src='https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579'
-                alt='bitcoin'
+                src={coinInfo.image ? coinInfo.image.large : null}
+                alt={coinInfo.name}
               />
               <div className='coin-symbol'>
                 <p>{coinInfo.name}</p>
