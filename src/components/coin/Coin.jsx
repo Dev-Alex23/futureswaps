@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 import "./coin.scss";
 import CoinItem from "../coinItem/CoinItem";
-import Header from "../header/Header";
 import CoinPage from "../../pages/CoinPage";
 
 const Coin = () => {
@@ -36,7 +35,6 @@ const Coin = () => {
 
   return (
     <>
-      <Header />
       <div className='form'>
         <h1>Search Crypto</h1>
         <input

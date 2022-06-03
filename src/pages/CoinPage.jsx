@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import DOMPurify from "dompurify";
 
-import Head from "../components/header/Header";
 import "./coinPage.scss";
 
 const CoinPage = () => {
@@ -23,7 +22,6 @@ const CoinPage = () => {
   }, [url]);
   return (
     <>
-      <Head />
       <div className='coinInfo'>
         <div className='coinInfo__content'>
           <div className='coin-name'>

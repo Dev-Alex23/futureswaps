@@ -4,10 +4,12 @@ import "./styles/app.scss";
 import Coin from "./components/coin/Coin";
 
 import { Route, Routes } from "react-router-dom";
+import Head from "./components/header/Header";
 
 function App() {
   return (
     <div className='App'>
+      <Head />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
