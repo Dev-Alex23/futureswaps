@@ -1,4 +1,6 @@
 import React from "react";
+import { SparklinesLine } from "react-sparklines";
+import { Sparklines } from "react-sparklines";
 import "./coinItem.scss";
 
 const CoinItem = ({
@@ -8,6 +10,7 @@ const CoinItem = ({
   price_change_percentage_24h,
   total_volume,
   market_cap,
+  sparkline_in_7d,
 }) => {
   return (
     <div className='coin-row'>
@@ -36,6 +39,11 @@ const CoinItem = ({
         </div>
         <div className='market-cap'>
           <p>${market_cap.toLocaleString()}</p>
+        </div>
+        <div className='market-cap'>
+          <Sparklines data={sparkline_in_7d?.price}>
+            <SparklinesLine color='teal' />
+          </Sparklines>
         </div>
       </div>
     </div>

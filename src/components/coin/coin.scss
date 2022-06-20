@@ -21,7 +21,7 @@
 }
 
 .coin-head-row {
-  max-width: 1140px;
+  max-width: 1240px;
   margin: auto;
 
   @include breakpoint(md) {
@@ -30,7 +30,7 @@
 
   &__content {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     color: aliceblue;
     box-shadow: $box-shadow;
     // border: 2px dotted green;
