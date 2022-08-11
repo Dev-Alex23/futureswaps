@@ -23,14 +23,23 @@ const Coin = () => {
     "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d";
 
   useEffect(() => {
+    const CancelToken = axios.CancelToken.source();
+
     axios
-      .get(url)
+      .get(url, { cancelToken: CancelToken.token })
       .then(({ data }) => {
+        console.log("request run");
         setCoins(data);
       })
       .catch((error) => {
-        alert(error);
+        if (axios.isCancel(error)) {
+          console.log("request cancelled!");
+        }
       });
+
+    return () => {
+      CancelToken.cancel();
+    };
   }, []);
 
   return (

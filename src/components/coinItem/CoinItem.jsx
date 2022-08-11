@@ -42,7 +42,11 @@ const CoinItem = ({
         </div>
         <div className='market-cap'>
           <Sparklines data={sparkline_in_7d?.price}>
-            <SparklinesLine color='teal' />
+            {price_change_percentage_24h.toFixed(2) < 0 ? (
+              <SparklinesLine color='red' />
+            ) : (
+              <SparklinesLine color='teal' />
+            )}
           </Sparklines>
         </div>
       </div>

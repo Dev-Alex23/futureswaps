@@ -13,12 +13,23 @@ const CoinPage = () => {
   const url = `https://api.coingecko.com/api/v3/coins/${params.id}`;
 
   useEffect(() => {
+    const cancelToken = axios.CancelToken.source();
+    console.log(cancelToken);
+
     axios
-      .get(url)
+      .get(url, { cancelToken: cancelToken.token })
       .then((response) => {
         setCoinInfo(response.data);
       })
-      .catch((e) => console.error(e));
+      .catch((e) => {
+        if (axios.isCancel(e)) {
+          console.log("request cancelled!");
+        }
+      });
+
+    return () => {
+      cancelToken.cancel();
+    };
   }, [url]);
   return (
     <>
@@ -68,7 +79,6 @@ const CoinPage = () => {
           </div>
         </div>
       </div>
-      {/* <div>{coinInfo.id}</div> */}
     </>
   );
 };
