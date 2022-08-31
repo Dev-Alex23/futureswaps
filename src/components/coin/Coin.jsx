@@ -3,16 +3,18 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 import "./coin.scss";
+import Loading from "../Loading/Loading";
 import CoinItem from "../coinItem/CoinItem";
 import CoinPage from "../../pages/CoinPage";
 
 const Coin = () => {
   const [coins, setCoins] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const handleChange = ({ target }) => {
     setSearchTerm(target.value);
-    console.log(target.value);
+    // console.log(target.value);
   };
 
   const filterCoins = coins.filter((coin) => {
@@ -28,10 +30,11 @@ const Coin = () => {
     axios
       .get(url, { cancelToken: CancelToken.token })
       .then(({ data }) => {
-        console.log("request run");
         setCoins(data);
+        setLoading(false);
       })
       .catch((error) => {
+        //Cancelling the request
         if (axios.isCancel(error)) {
           console.log("request cancelled!");
         }
@@ -78,13 +81,17 @@ const Coin = () => {
           </div>
         </div>
 
-        {filterCoins.map((coin) => {
-          return (
-            <Link to={`/charts/${coin.id}`} element={<CoinPage />} key={coin.id}>
-              <CoinItem key={coin.id} {...coin} />
-            </Link>
-          );
-        })}
+        {loading ? (
+          <Loading />
+        ) : (
+          filterCoins.map((coin) => {
+            return (
+              <Link to={`/charts/${coin.id}`} element={<CoinPage />} key={coin.id}>
+                <CoinItem key={coin.id} {...coin} />
+              </Link>
+            );
+          })
+        )}
 
         {/* {coins.map((coin) => {
           return (
