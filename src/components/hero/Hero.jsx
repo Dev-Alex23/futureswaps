@@ -7,6 +7,18 @@ import purple from "../../assets/images/Graphic-Purple-Wave.png";
 const Hero = () => {
   return (
     <div className='hero'>
+      <div className='wave-container'>
+        <div className='blue-container'>
+          <img src={blue} alt='Graphic-Blue-Wave' />
+        </div>
+        <div className='teal-container'>
+          <img src={teal} alt='Graphic-Teal-Wave' />
+        </div>
+        <div className='purple-container'>
+          <img src={purple} alt='Graphic-Purple-Wave' />
+        </div>
+      </div>
+
       <div className='hero__content'>
         <div className='hero__content__info-container'>
           <p>Built on ETH. Powerd by you</p>
@@ -33,17 +45,6 @@ const Hero = () => {
               <p>100,000</p>
             </div>
           </div>
-        </div>
-      </div>
-      <div className='wave-container'>
-        <div className='blue-container'>
-          <img src={blue} alt='Graphic-Blue-Wave' />
-        </div>
-        <div className='teal-container'>
-          <img src={teal} alt='Graphic-Teal-Wave' />
-        </div>
-        <div className='purple-container'>
-          <img src={purple} alt='Graphic-Purple-Wave' />
         </div>
       </div>
     </div>

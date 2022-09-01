@@ -6,12 +6,15 @@
   padding: 0.7rem 12rem;
   color: white;
   transition: padding ease-in-out 0.3s;
+  position: relative;
+
   @include breakpoint(md) {
     padding: 0.7rem 3rem;
   }
 
   &__content {
     &__info-container {
+      z-index: 100;
       max-width: 750px;
       p {
         color: $primary-text-color;
@@ -86,13 +89,20 @@
     }
   }
   .wave-container {
-    display: none;
+    // display: none;
     background-color: #4d6adc;
-    position: relative;
     .blue-container,
     .teal-container,
     .purple-container {
       position: absolute;
+      top: 40px;
+      right: 0;
+      transition: opacity 0.4s ease-in-out;
+
+      z-index: -3;
+      @include breakpoint(md) {
+        opacity: 0.3;
+      }
     }
 
     // img {
